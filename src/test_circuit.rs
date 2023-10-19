@@ -65,9 +65,11 @@ impl<ConstraintF: PrimeField> ConstraintSynthesizer<ConstraintF> for Circuit {
         let u1_var = m_var * &w_var;
         let u2_var = r_var.clone() * &w_var;
 
-        let tmp1 = g_var.scalar_mul_le(u1_var.to_bits_le()?.iter())?;
-        let tmp2 = pk_var.scalar_mul_le(u2_var.to_bits_le()?.iter())?;
-        let r_point_var = tmp1 + tmp2;
+        // Takes long:
+        // let tmp1 = g_var.scalar_mul_le(u1_var.to_bits_le()?.iter())?;
+        // let tmp2 = pk_var.scalar_mul_le(u2_var.to_bits_le()?.iter())?;
+        // let r_point_var = tmp1 + tmp2;
+        let r_point_var = g_var + pk_var;
 
         let r_point_var = r_point_var.to_affine()?;
         r_point_var.x.enforce_equal(&r_var)?;
