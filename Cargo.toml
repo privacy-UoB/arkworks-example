@@ -1,0 +1,19 @@
+[package]
+name = "zk-p256"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ark-bls12-377 = "0.4"
+ark-bw6-761 = "0.4"
+ark-secp256r1 = "0.4"
+ark-relations = "0.4"
+ark-groth16 = "0.4"
+ark-snark = "0.4"
+ark-ff = "0.4"
+ark-ec = "0.4"
+ark-r1cs-std = { git = "https://github.com/paberr/r1cs-std", branch = "iipb/non-native" }
+ark-serialize = "0.4"
+rand = "0.8"
