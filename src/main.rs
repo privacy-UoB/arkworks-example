@@ -5,11 +5,11 @@ use crate::test_circuit::ZKPTest;
 mod test_circuit;
 
 fn main() {
-    println!("====== Parameter generation for Nano Sync initiated ======");
+    println!("====== ZKP test initiated ======");
     let start = Instant::now();
 
-    ZKPTest::setup().unwrap();
+    ZKPTest::run().unwrap();
 
-    println!("====== Parameter generation for Nano Sync finished ======");
+    println!("====== ZKP test finished ======");
     println!("Total time elapsed: {:?} seconds", start.elapsed());
 }
